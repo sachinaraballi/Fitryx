@@ -156,3 +156,66 @@ npx expo start --android
 ```
 
 Scan the QR code with **Expo Go** (iOS/Android) to run on a physical device. Ensure your phone and Mac are on the same WiFi network.
+
+---
+
+## Mac Setup
+
+### Prerequisites
+
+| Tool | Version | Install |
+|------|---------|---------|
+| Node.js | 18+ | [nodejs.org](https://nodejs.org) or `brew install node` |
+| npm | 9+ | Bundled with Node.js |
+| Homebrew | latest | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` |
+| Xcode | latest | Mac App Store (required for iOS Simulator) |
+| Xcode CLI Tools | latest | `xcode-select --install` |
+| Expo CLI | latest | Bundled via `npx` — no global install needed |
+
+### Step-by-step
+
+**1. Install Homebrew**
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+**2. Install Node.js**
+```bash
+brew install node
+```
+
+**3. Install Xcode**
+- Download from the **Mac App Store**
+- Open Xcode once after installing to accept the license agreement
+
+**4. Install Xcode Command Line Tools**
+```bash
+xcode-select --install
+```
+
+**5. Install GitHub CLI (optional, for pushing to GitHub)**
+```bash
+brew install gh
+gh auth login
+```
+
+**6. Clone and run the project**
+```bash
+git clone https://github.com/sachinaraballi/Fitryx.git
+cd Fitryx
+npm install
+npx expo start --ios
+```
+
+### Run on Physical iPhone
+1. Install **Expo Go** from the App Store
+2. Connect your Mac and iPhone to the **same WiFi network**
+3. Run `npx expo start` and scan the QR code with your iPhone camera
+
+### Verify Your Setup
+```bash
+node --version       # should be v18+
+npm --version        # should be 9+
+brew --version       # should print Homebrew x.x.x
+xcode-select -p      # should print /Applications/Xcode.app/Contents/Developer
+```
